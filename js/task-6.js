@@ -8,6 +8,7 @@ function createBoxes(amount) {
   let number = 30;
   let template = '';
 
+  // Create string of blocks
   for (let i = 0; i < amount; i++) {
     const color = getRandomHexColor();
     const tag = `<div style="width: ${number}px; height:${number}px; background-color: ${color};"></div>`;
