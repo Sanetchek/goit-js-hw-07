@@ -4,7 +4,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-// first variant
+// first version
 // function createBoxes(amount) {
 //   let number = 30;
 //   let template = '';
@@ -21,7 +21,7 @@ function getRandomHexColor() {
 //   return template
 // }
 
-// second variant
+// second version
 function createBoxes(amount) {
   let number = 30;
   const items = [];
