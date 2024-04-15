@@ -33,6 +33,7 @@ function createBoxes(amount) {
     item.style.height = `${number}px`
     item.style.backgroundColor = color;
     items.push(item);
+    number += 10;
   }
   boxes.append(...items);
 }
