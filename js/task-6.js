@@ -4,20 +4,37 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+// first variant
+// function createBoxes(amount) {
+//   let number = 30;
+//   let template = '';
+
+//   // Create string of blocks
+//   for (let i = 0; i < amount; i++) {
+//     const color = getRandomHexColor();
+//     const tag = `<div style="width: ${number}px; height:${number}px; background-color: ${color};"></div>`;
+
+//     template += tag;
+//     number += 10;
+//   }
+
+//   return template
+// }
+
+// second variant
 function createBoxes(amount) {
   let number = 30;
-  let template = '';
+  const items = [];
 
-  // Create string of blocks
   for (let i = 0; i < amount; i++) {
     const color = getRandomHexColor();
-    const tag = `<div style="width: ${number}px; height:${number}px; background-color: ${color};"></div>`;
-
-    template += tag;
-    number += 10;
+    const item = document.createElement("div");
+    item.style.width = `${number}px`
+    item.style.height = `${number}px`
+    item.style.backgroundColor = color;
+    items.push(item);
   }
-
-  return template
+  boxes.append(...items);
 }
 
 function destroyBoxes() {
@@ -33,8 +50,9 @@ const onCreateBox = event => {
 
   if (boxNumber > 0 && boxNumber <= 100) {
     boxes.innerHTML = '';
-    const newBoxes = createBoxes(boxNumber);
-    boxes.insertAdjacentHTML('beforeend', newBoxes);
+    createBoxes(boxNumber);
+    // const newBoxes = createBoxes(boxNumber);
+    // boxes.insertAdjacentHTML('beforeend', newBoxes);
     inputNumber.value = '';
   }
 
